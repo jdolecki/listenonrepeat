@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Better Listen on Repeat</title>
+        <meta name="description" content="Listen on Repeat sucks, let's make it better!">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+            App = {youtubeAPIReady: false};
+        </script>
+    </head>
+    <body>
+        <iframe id="player" type="text/html" width="640" height="390"
+          src="http://www.youtube.com/embed/yBSuvDBMnLA?enablejsapi=1&origin=http://127.0.0.1"
+          frameborder="0"></iframe>
+        <!-- start YouTube -->
+        <script type="text/javascript">
+            var tag = document.createElement('script');
+            tag.src = "http://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            function onYouTubeIframeAPIReady() {
+                App.youtubeAPIReady = true;
+            }
+        </script>
+        <!-- end YouTube -->
+    </body>
+</html>
